@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Customer">
+  <ClassDiagramComponents>
+    <Class name="Company" package="Customer" visibility="public" xPosition="385.0" yPosition="29.0">
+      <Fields>
+        <Field name="myCust" type="ArrayList&lt;Customer&gt;" visibility="private" isStatic="true"/>
+        <Field name="sc" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="addCust" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="addByKeyboard" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showCust" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="deleteById" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="deleteBy_Gender_Name" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="deleteByGender" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="findById" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="findBy_Gender" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Customer" package="Customer" visibility="public" xPosition="427.0" yPosition="450.0">
+      <Fields>
+        <Field name="gender" type="Gender" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="idCust" type="int" visibility="private"/>
+        <Field name="idGenerator" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Gender" name="gender"/>
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="getGender" returnType="Gender" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getIdCust" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="Customer" visibility="public" xPosition="89.0" yPosition="481.0">
+      <Fields>
+        <Field name="loop" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="comp" type="Company" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="switchCase" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="option"/>
+        </Method>
+        <Method name="opt" returnType="int" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Enum name="Gender" package="Customer" visibility="public" xPosition="928.0" yPosition="589.0">
+      <Literals>
+        <Literal name="MR"/>
+        <Literal name="MRS"/>
+        <Literal name="MISS"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="gender" source="Customer.Customer" target="Customer.Gender" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="comp" source="Customer.Main" target="Customer.Company" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myCust" source="Customer.Company" target="Customer.Customer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Customer&gt;"/>
+    <UseRelation source="Customer.Customer" target="Customer.Gender" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

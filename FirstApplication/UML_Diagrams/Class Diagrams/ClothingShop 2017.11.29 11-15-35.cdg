@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ClothingShop">
+  <ClassDiagramComponents>
+    <Class name="Cloth" package="ClothingShop" visibility="public" isAbstract="true" xPosition="395.0" yPosition="20.0">
+      <Fields>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="size" type="int" visibility="private"/>
+        <Field name="price" type="double" visibility="private"/>
+        <Field name="onSale" type="boolean" visibility="private"/>
+        <Field name="countOfCloths" type="int" visibility="private" isStatic="true"/>
+        <Field name="totalSale" type="double" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="size"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="onSale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCountOfCloths" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getTotalSale" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="isOnSale" returnType="boolean" visibility="public"/>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="calculatePriceAfterSale" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="printInformation" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="printNumberOfCloths" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="printTotalSale" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Dress" package="ClothingShop" visibility="public" xPosition="525.0" yPosition="514.0">
+      <Fields>
+        <Field name="dressSale" type="double" visibility="private" isStatic="true"/>
+        <Field name="countOfCloths" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="size"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="onSale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCountOfCloths" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getDressSale" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="calculatePriceAfterSale" returnType="double" visibility="public"/>
+        <Method name="printInformation" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pants" package="ClothingShop" visibility="public" xPosition="38.0" yPosition="672.0">
+      <Fields>
+        <Field name="countOfCloths" type="int" visibility="private" isStatic="true"/>
+        <Field name="pantsSale" type="double" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="size"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="onSale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getpantsSale" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="getCountOfCloths" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="calculatePriceAfterSale" returnType="double" visibility="public"/>
+        <Method name="printInformation" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Shop" package="ClothingShop" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="myShop" type="ArrayList&lt;Cloth&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initiateList" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="T_shirt" package="ClothingShop" visibility="public" xPosition="1031.0" yPosition="587.0">
+      <Fields>
+        <Field name="tshirtSale" type="double" visibility="private" isStatic="true"/>
+        <Field name="countOfCloths" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="size"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="onSale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCountOfCloths" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getTshirtSale" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="calculatePriceAfterSale" returnType="double" visibility="public"/>
+        <Method name="printInformation" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ClothingShop.T_shirt" target="ClothingShop.Cloth"/>
+    <HasRelation name="myShop" source="ClothingShop.Shop" target="ClothingShop.Cloth" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Cloth&gt;"/>
+    <IsRelation name="is" source="ClothingShop.Pants" target="ClothingShop.Cloth"/>
+    <IsRelation name="is" source="ClothingShop.Dress" target="ClothingShop.Cloth"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

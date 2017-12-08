@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="managementstaff">
+  <ClassDiagramComponents>
+    <Class name="Employee" package="managementstaff" visibility="public" isAbstract="true" xPosition="657.0" yPosition="3.0">
+      <Fields>
+        <Field name="i" type="int" visibility="private" isStatic="true"/>
+        <Field name="employeeID" type="int" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="adress" type="String" visibility="private"/>
+        <Field name="baseSalary" type="double" visibility="private"/>
+        <Field name="baseBonus" type="double" visibility="private"/>
+        <Field name="salary" type="double" visibility="private"/>
+        <Field name="bonus" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="adress"/>
+          <Argument type="double" name="baseSalary"/>
+          <Argument type="double" name="baseBonus"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getEmployeeID" returnType="int" visibility="public"/>
+        <Method name="setEmployeeID" returnType="void" visibility="public">
+          <Argument type="int" name="employeeID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getAdress" returnType="String" visibility="public"/>
+        <Method name="setAdress" returnType="void" visibility="public">
+          <Argument type="String" name="adress"/>
+        </Method>
+        <Method name="getBaseSalary" returnType="double" visibility="public"/>
+        <Method name="setBaseSalary" returnType="void" visibility="public">
+          <Argument type="double" name="baseSalary"/>
+        </Method>
+        <Method name="getBaseBonus" returnType="double" visibility="public"/>
+        <Method name="setBaseBonus" returnType="void" visibility="public">
+          <Argument type="double" name="baseBonus"/>
+        </Method>
+        <Method name="getSalary" returnType="double" visibility="public"/>
+        <Method name="setSalary" returnType="void" visibility="public">
+          <Argument type="double" name="salary"/>
+        </Method>
+        <Method name="calculateSalary" returnType="void" visibility="public"/>
+        <Method name="calculateBonus" returnType="void" visibility="public"/>
+        <Method name="getBonus" returnType="double" visibility="public"/>
+        <Method name="setBonus" returnType="void" visibility="public">
+          <Argument type="double" name="bonus"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Management_Staff" package="managementstaff" visibility="public" xPosition="20.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MethodsInPlace" package="managementstaff" visibility="public" xPosition="35.0" yPosition="570.0">
+      <Fields>
+        <Field name="salary" type="double" visibility="package"/>
+        <Field name="myEmployees" type="ArrayList&lt;Employee&gt;" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="addEmployeebyDepatament" returnType="void" visibility="public"/>
+        <Method name="removeEmplById" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="findEmployeeById" returnType="Employee" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateEmployees" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="showAllEmployees" returnType="void" visibility="public"/>
+        <Method name="removeEmplByAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getAllEmployeesByDepartment" returnType="void" visibility="public">
+          <Argument type="Class" name="cls"/>
+        </Method>
+        <Method name="avrageSalaryForAll" returnType="void" visibility="public"/>
+        <Method name="avrageSalaryByDepartment" returnType="void" visibility="public"/>
+        <Method name="procentageEmployeeByDepartment" returnType="void" visibility="public"/>
+        <Method name="totalSalaryForEmployee" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Programmers" package="managementstaff" visibility="public" xPosition="993.0" yPosition="684.0">
+      <Fields>
+        <Field name="noOfProjects" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="adress"/>
+          <Argument type="double" name="baseSalary"/>
+          <Argument type="double" name="baseBonus"/>
+          <Argument type="int" name="noOfProjects"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNoOfProjects" returnType="int" visibility="public"/>
+        <Method name="setNoOfProjects" returnType="void" visibility="public">
+          <Argument type="int" name="NoOfProjects"/>
+        </Method>
+        <Method name="calculateBonus" returnType="void" visibility="public"/>
+        <Method name="calculateSalary" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Repository" package="managementstaff" visibility="public" xPosition="443.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="initial" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="SalePeople" package="managementstaff" visibility="public" xPosition="20.0" yPosition="293.0">
+      <Fields>
+        <Field name="noOfSales" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="adress"/>
+          <Argument type="double" name="baseSalary"/>
+          <Argument type="double" name="baseBonus"/>
+          <Argument type="int" name="noOfSales"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNoOfSales" returnType="int" visibility="public"/>
+        <Method name="setNoOfSales" returnType="void" visibility="public">
+          <Argument type="int" name="noOfSales"/>
+        </Method>
+        <Method name="calculateSalary" returnType="void" visibility="public"/>
+        <Method name="calculateBonus" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Secretaries" package="managementstaff" visibility="public" xPosition="616.0" yPosition="684.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="adress"/>
+          <Argument type="double" name="baseSalary"/>
+          <Argument type="double" name="baseBonus"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculateSalary" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SwitchChoices" package="managementstaff" visibility="public" xPosition="358.0" yPosition="670.0">
+      <Fields>
+        <Field name="x" type="int" visibility="package"/>
+        <Field name="dM" type="MethodsInPlace" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="switch_ChoiceMainMenu" returnType="void" visibility="public">
+          <Argument type="int" name="ch"/>
+        </Method>
+        <Method name="switch_GeneralInfoList" returnType="void" visibility="public">
+          <Argument type="int" name="ch"/>
+        </Method>
+        <Method name="switch_StatisticlInfoList" returnType="void" visibility="public">
+          <Argument type="int" name="ch"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UI" package="managementstaff" visibility="public" xPosition="239.0" yPosition="19.0">
+      <Fields>
+        <Field name="Loop" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="sc" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="readNumber" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="readText" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="mainMenu" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="generalInfo" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="statisticInfo" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="emplDepartament" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="chekClass" returnType="Class" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="managementstaff.Secretaries" target="managementstaff.Employee"/>
+    <IsRelation name="is" source="managementstaff.SalePeople" target="managementstaff.Employee"/>
+    <HasRelation name="myEmployees" source="managementstaff.MethodsInPlace" target="managementstaff.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Employee&gt;"/>
+    <IsRelation name="is" source="managementstaff.Programmers" target="managementstaff.Employee"/>
+    <UseRelation source="managementstaff.MethodsInPlace" target="managementstaff.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dM" source="managementstaff.SwitchChoices" target="managementstaff.MethodsInPlace" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
