@@ -101,8 +101,9 @@ String merged = list.stream()
 
     unsortMap.put("student4", 50);
     unsortMap.put("student5", 70);
-    unsortMap.put("student7", 75);
     unsortMap.put("student7", 65);
+    //unsortMap.put("student7", 75); 
+    //unsortMap.put("student7", 85);if we have duplicates, the map will take the last value (override), in this case 85
     unsortMap.put("student1", 90);
     unsortMap.put("student2", 55);
     unsortMap.put("student6", 35);
@@ -113,12 +114,19 @@ String merged = list.stream()
     
      Map<String, Integer> sortMap = unsortMap.entrySet().stream()
              .sorted(Map.Entry.comparingByKey())
-             .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue, (oldValue, newValue) ->{
+             .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new)); 
+      System.out.println(sortMap);
+    sortMap.entrySet().forEach(System.out::println);
+  
+                     
+                     /*->{
             System.out.println("Duplicate keys !!!");
             return oldValue;
         }, LinkedHashMap::new));
       System.out.println(sortMap);
-    sortMap.entrySet().forEach(System.out::println);
+    sortMap.entrySet().forEach(System.out::println);*/
+                     
+                     //it can be made as well like in ex 5
  
     /** Output
      {student1=50, student2=70, student3=75, student4=90, student5=55, student6=35, student7=25}
@@ -145,11 +153,18 @@ String merged = list.stream()
     System.out.println("Original...");
     System.out.println(unsortMap);
     
-     Map<String, Integer> sortMap = unsortMap.entrySet().stream()
+    Map<String, Integer> sortMap = new LinkedHashMap<>();
+       unsortMap.entrySet().stream()
+               .sorted(Map.Entry.comparingByValue())
+               .forEachOrdered(x-> sortMap.put(x.getKey(),x.getValue()));
+       System.out.println(sortMap);
+       sortMap.entrySet().forEach(System.out::println);
+    
+    /* Map<String, Integer> sortMap = unsortMap.entrySet().stream()
              .sorted(Map.Entry.comparingByValue())
              .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
       System.out.println(sortMap);
-    sortMap.entrySet().forEach(System.out::println);
+    sortMap.entrySet().forEach(System.out::println); */
  
     
  
