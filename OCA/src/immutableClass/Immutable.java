@@ -11,10 +11,10 @@ public StringBuilder getBuilder() {
 return new StringBuilder (builder);
 } 
 
-/*public Immutable(StringBuilder b) {
+/*public NotImmutable(StringBuilder b) {
 builder = b;
 }
-public StringBuilder getBuilder() {
+public String getBuilder() {
 return builder;
 }*/
     public static void main(String[] args) {
