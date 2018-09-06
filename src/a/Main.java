@@ -94,6 +94,11 @@ public class Main {
                     int tradeVolume = currentSell.getSellVolume();
                     int tradePrice = currentSell.getSellPrice();
                     sum += currentSell.getSellVolume();
+                    if (buyCounter > sellCounter) {
+                        tradePrice = currentSell.getSellPrice();
+                    } else {
+                        tradePrice = currentBuy.getBuyPrice();
+                    }
                     System.out.println("TRADE " + tradeVolume + "@" + tradePrice);
                     currentSell.setSellVolume(0);
                     sells.set(j, currentSell);
@@ -113,6 +118,11 @@ public class Main {
                     sells.set(j, currentSell);
                     int tradeVolume = buyRestVolume;
                     int tradePrice = currentSell.getSellPrice();
+                    if (buyCounter > sellCounter) {
+                        tradePrice = currentSell.getSellPrice();
+                    } else {
+                        tradePrice = currentBuy.getBuyPrice();
+                    }
                     System.out.println("TRADE " + tradeVolume + "@" + tradePrice);
                     currentBuy.setBuyVolume(0);
                     buys.set(i, currentBuy);
