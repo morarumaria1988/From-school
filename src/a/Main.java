@@ -8,9 +8,8 @@ public class Main {
     static String inputLine;
     static ArrayList<Sell> sells = new ArrayList();
     static ArrayList<Buy> buys = new ArrayList();
-    static Integer sellCounter = 0;
-    static Integer buyCounter = 0;
-    static String beginOrder;
+    static Integer counter = 0;
+       static String beginOrder;
 
     public static void main(String[] args) {
         while (true) {
@@ -49,23 +48,23 @@ public class Main {
 
     public static void analyze(String order) {
         if (order.equals("BUY ")) {
-            buyCounter++;
+            counter++;
             String[] orderPart = inputLine.substring(3).trim().split("@");
             Integer buyVolume = Integer.valueOf(orderPart[0]);
             Integer buyPrice = Integer.valueOf(orderPart[1]);
             if (buyVolume > 0 && buyPrice > 0) {
-                buys.add(new Buy(buyPrice, buyVolume, buyCounter));
+                buys.add(new Buy(buyPrice, buyVolume, counter));
             } else {
                 System.out.println("Volume and price must be > 0");
             }
         }
         if (order.equals("SELL")) {
-            sellCounter++;
+            counter++;
             String[] orderPart = inputLine.substring(4).trim().split("@");
             Integer sellVolume = Integer.valueOf(orderPart[0]);
             Integer sellPrice = Integer.valueOf(orderPart[1]);
             if (sellVolume > 0 && sellPrice > 0) {
-                sells.add(new Sell(sellPrice, sellVolume, sellCounter));
+                sells.add(new Sell(sellPrice, sellVolume, counter));
             } else {
                 System.out.println("Volume and price must be > 0");
             }
@@ -94,7 +93,7 @@ public class Main {
                     int tradeVolume = currentSell.getSellVolume();
                     int tradePrice = currentSell.getSellPrice();
                     sum += currentSell.getSellVolume();
-                    if (buyCounter > sellCounter) {
+                    if (currentBuy.getBuyCounter() > currentSell.getSellCounter()) {
                         tradePrice = currentSell.getSellPrice();
                     } else {
                         tradePrice = currentBuy.getBuyPrice();
@@ -118,12 +117,11 @@ public class Main {
                     sells.set(j, currentSell);
                     int tradeVolume = buyRestVolume;
                     int tradePrice = currentSell.getSellPrice();
-                    if (buyCounter > sellCounter) {
+                     if (currentBuy.getBuyCounter() > currentSell.getSellCounter()) {
                         tradePrice = currentSell.getSellPrice();
                     } else {
                         tradePrice = currentBuy.getBuyPrice();
-                    }
-                    System.out.println("TRADE " + tradeVolume + "@" + tradePrice);
+                    }                    System.out.println("TRADE " + tradeVolume + "@" + tradePrice);
                     currentBuy.setBuyVolume(0);
                     buys.set(i, currentBuy);
                     break;
